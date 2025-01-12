@@ -8,20 +8,17 @@ import { BASE_URL } from "../utills/constants";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const [loginData, setLoginData] = useState({
-    emailId: "shelke@gmail.com",
-    password: "Shelke@123",
+    emailId: "mayur@gmail.com",
+    password: "Mayur@123",
   });
   const handleLogin = async () => {
     try {
       const res = await axios.post(
         `${BASE_URL}/login`,
-        {
-          ...loginData,
-        },
-        {
-          withCredentials: true,
-        }
+        { ...loginData },
+        { withCredentials: true }
       );
       if (res) {
         dispatch(addUser(res.data.user));
@@ -29,6 +26,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
+      setError("test");
     }
   };
   return (
@@ -72,6 +70,7 @@ const Login = () => {
               />
             </label>
           </div>
+          <p>{error}</p>
           <div className="card-actions justify-center ">
             <button className="btn btn-primary" onClick={handleLogin}>
               Login
