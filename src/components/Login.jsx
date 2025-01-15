@@ -26,7 +26,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
-      setError("test");
+      setError(error?.response?.data || "Something went wrong");
     }
   };
   return (
@@ -70,7 +70,7 @@ const Login = () => {
               />
             </label>
           </div>
-          <p>{error}</p>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center ">
             <button className="btn btn-primary" onClick={handleLogin}>
               Login
