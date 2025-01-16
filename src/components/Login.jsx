@@ -72,7 +72,10 @@ const Login = () => {
           </div>
           <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center ">
-            <button className="btn btn-primary" onClick={handleLogin}>
+            <button
+              className="btn btn-outline btn-primary"
+              onClick={handleLogin}
+            >
               Login
             </button>
           </div>

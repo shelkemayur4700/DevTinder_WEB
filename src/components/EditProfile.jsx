@@ -152,7 +152,7 @@ const EditProfile = ({ user }) => {
               <p className="text-red-500">{error}</p>
               <div className="card-actions justify-center ">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-outline btn-primary"
                   onClick={handleUpdateProfile}
                 >
                   Update Profile
