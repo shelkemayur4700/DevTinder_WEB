@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import NavBar from "./Navbar";
 import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 import Footer from "./Footer";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import NavBar from "./NavBar";
 import { BASE_URL } from "../utills/constants";
 import { addUser } from "../redux/slice/userSlice";
 const Body = () => {
@@ -22,7 +22,6 @@ const Body = () => {
       if (error.status === 401) {
         navigate("/login");
       }
-
     }
   };
   useEffect(() => {
