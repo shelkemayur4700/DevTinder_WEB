@@ -11,8 +11,8 @@ const EditProfile = ({ user }) => {
   const [userData, setUserData] = useState({
     firstName: user?.firstName,
     lastName: user?.lastName,
-    age: user?.age,
-    gender: user?.gender,
+    age: user?.age || "",
+    gender: user?.gender || "",
     profileURL: user?.profileURL,
     about: user?.about,
   });
