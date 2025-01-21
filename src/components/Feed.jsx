@@ -4,9 +4,11 @@ import { BASE_URL } from "../utills/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addFeed } from "../redux/slice/feedSlice";
 import UserCard from "./UserCard";
+import { useNavigate } from "react-router-dom";
 
 const Feed = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const feed = useSelector((state) => state.feed);
 
   const getFeed = async () => {
@@ -17,6 +19,7 @@ const Feed = () => {
       });
       dispatch(addFeed(res?.data?.data));
     } catch (error) {
+      navigate("/login");
       console.error(error);
     }
   };
