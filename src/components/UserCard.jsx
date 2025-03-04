@@ -18,14 +18,13 @@ const UserCard = ({ user }) => {
       dispatch(removeUserFromFeed(id));
     } catch (error) {}
   };
-  console.log(user);
   const { _id, firstName, lastName, age, gender, skills, about, profileURL } =
     user;
   return (
     <div>
       <div className="card bg-base-300 w-96 shadow-2xl">
         <figure>
-          <img src={profileURL} alt="photo" />
+          <img src={profileURL} alt="photo" className="h-[50] w-[50]" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{firstName + " " + lastName}</h2>

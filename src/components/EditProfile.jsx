@@ -26,7 +26,6 @@ const EditProfile = ({ user }) => {
         { ...userData },
         { withCredentials: true }
       );
-      console.log(res);
       dispatch(addUser(res?.data?.data));
       setToast(true);
       // setTimeout(() => {
@@ -38,7 +37,7 @@ const EditProfile = ({ user }) => {
   };
   return (
     <>
-      {toast && <Toast message={"Profile updated successfully!"} />}{" "}
+      {toast && <Toast message={"Profile updated successfully!"} />}
       <div className="flex justify-center my-10">
         <div className="flex justify-center mx-10">
           <div className="card bg-base-300 w-96 shadow-xl">

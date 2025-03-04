@@ -14,6 +14,8 @@ import RefundPolicy from "./components/FooterCompo/RefundPolicy";
 import ShippingPolicy from "./components/FooterCompo/ShippingPolicy";
 import TermsConditions from "./components/FooterCompo/TermsConditions";
 import ContactUs from "./components/FooterCompo/ContactUs";
+import Premium from "./components/Premium";
+import Chat from "./components/Chat";
 
 const App = () => {
   return (
@@ -27,11 +29,13 @@ const App = () => {
               <Route path="/profile" element={<Profile />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
-              <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+              <Route path="/premium" element={<Premium />} />
+              <Route path="/chat/:targetUserId" element={<Chat />} />
+              {/* <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
               <Route path="/refundPolicy" element={<RefundPolicy />} />
               <Route path="/shippingPolicy" element={<ShippingPolicy />} />
               <Route path="/termsConditions" element={<TermsConditions />} />
-              <Route path="/contactUs" element={<ContactUs />} />
+              <Route path="/contactUs" element={<ContactUs />} /> */}
             </Route>
           </Routes>
         </BrowserRouter>
